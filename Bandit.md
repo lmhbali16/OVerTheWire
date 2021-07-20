@@ -116,3 +116,33 @@ sort data.txt | uniq -c | grep '^ *1 '
 ```
 
 got password: UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+
+## level 9 -> level 10
+
+**sollution**:
+
+```
+strings data.txt | grep ==
+```
+
+got password: truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+
+## level 10 -> level 11
+
+**solution**:
+
+```
+strings data.txt | base64 --decode
+```
+
+got password: IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+
+## level 11 -> level 12
+
+**solution**:
+
+```
+cat data.txt | tr 'n-za-mN-ZA-M' 'a-zA-Z'
+```
+
+got password: 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
