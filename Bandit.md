@@ -122,6 +122,7 @@ got password: UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
 **sollution**:
 
 ```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit9
 strings data.txt | grep ==
 ```
 
@@ -132,6 +133,7 @@ got password: truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
 **solution**:
 
 ```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit10
 strings data.txt | base64 --decode
 ```
 
@@ -142,7 +144,63 @@ got password: IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
 **solution**:
 
 ```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit11
 cat data.txt | tr 'n-za-mN-ZA-M' 'a-zA-Z'
 ```
 
 got password: 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+
+
+## level 12 -> level 13
+
+**solution**:
+
+```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit12
+mdkir /tmpa/hoang
+cp ./data.txt /tmp/hoang/
+cd /tmp/hoang
+
+cat data.txt | xxd -r data
+file data
+mv data data2.gz
+gzip -d data2.gz
+file data2
+mv data2 data3.bz
+bzip2 -d data3.bz
+file data3
+mv data3 data4.gz
+gzip -d data4.gz
+file data4
+mv data4 data5.tar
+tar -xf data5.tar
+file data5.bin
+mv data5.bin data6.tar
+tar -xf data6.tar
+file data6.bin
+mv data6.bin data7.bz
+bzip2 -d data7bz
+file data7
+mv data7 data8.tar
+tar -xf data8.tar
+mv data8.bin data9.gz
+gzip -d data9.gz
+cat data9
+```
+
+got password: 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+
+Note: this was stupidly long....
+
+
+# level 13 -> level 14
+
+**solution**:
+
+```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit13
+ssh bandit14@localhost -i sshkey.private
+cat /etc/bandit_pass/bandit14
+```
+
+got password: 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
