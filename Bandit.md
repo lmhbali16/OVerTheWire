@@ -204,3 +204,29 @@ cat /etc/bandit_pass/bandit14
 ```
 
 got password: 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+
+# level 14 -> level 15
+
+**solution**
+
+```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit14
+echo 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e | nc localhost 30000
+```
+
+got password: BfMYroe26WYalil77FoDi9qh59eK5xNr
+
+# level 15 -> level 16
+
+**solution**
+
+```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit15
+openssl s_client -ign_eof -connect localhost:30001
+4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+```
+
+got password: cluFn7wTiGryunymYOu4RcffSxQluehd
+
+Note: `s_client` implements a generic SSL/TLS client which can establish a transparent connection to a remote server speaking SSL/TLS. `openssl s_client` opens an SSL connection. The tag `-ign_eof` makes sure the connection is not closed immediately.
+
