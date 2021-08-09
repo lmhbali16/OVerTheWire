@@ -321,3 +321,23 @@ ssh bandit.labs.overthewire.org -p 2220 -l bandit19
 ```
 
 got password: GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+
+## level 20 -> level 21
+
+**solution**
+
+```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit20
+nmap localhost
+echo "GbKksEFF4yrVs6il55v6gwY5aVje5f0j" ? nc -lp 6000
+```
+Open new terminal
+
+```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit20
+./suconnect 6000
+```
+got password: gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
+
+
+Note: choose a port that `nmap` does not show. `nc`  (netcat) reads and writes data across network connections.
