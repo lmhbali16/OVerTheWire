@@ -341,3 +341,31 @@ got password: gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
 
 
 Note: choose a port that `nmap` does not show. `nc`  (netcat) reads and writes data across network connections.
+
+## level 21 -> level 22
+
+**solution**
+
+```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit21
+cd /etc/cron.d
+cat cronjob_bandit22
+cat /usr/bin/cronjob_bandit22.sh
+cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+```
+
+got password: Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
+
+## level 22 -> level 23
+
+**solution**
+
+```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit22
+cd /etc/cron.d
+cat cronjob_bandit23
+echo I am user bandit23 | md5sum | cut -d ' ' -f 1
+cat /tmp/8ca319486bfbbc3663ea0fbe81326349
+```
+
+got password:jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
