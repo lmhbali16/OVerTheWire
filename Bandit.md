@@ -279,7 +279,7 @@ mkdir /tmp/key
 cd /tmp/key
 echo sshkey > ./sshkey.private
 cmod 400 ./sshkey.private
-ssh banidt17@localhost -i sshkey.private
+ssh bandit17@localhost -i sshkey.private
 cd /etc/bandit17
 echo bandit17
 ```
@@ -438,3 +438,24 @@ finally:
 	sys.exit(0)
 ```
 got password: uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+
+## level 25 -> level 26
+
+**solution**
+
+```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit25
+cat /etc/passwd | grep badnit26
+```
+
+`more` command is used. Minimize the terminal window. Then
+
+```
+ssh bandit17@localhost -i bandit16.sshkey
+v
+:e /etc/bandit_pass/badnit26
+```
+
+got password: 5czgV9L3Xx8JPOyRbXh6lQbmIOWvPT6Z
+
+Note: holy moly, this was tricky but fun
