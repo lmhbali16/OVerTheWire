@@ -445,17 +445,52 @@ got password: uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
 
 ```
 ssh bandit.labs.overthewire.org -p 2220 -l bandit25
-cat /etc/passwd | grep badnit26
+cat /etc/passwd | grep bandit26
 ```
 
 `more` command is used. Minimize the terminal window. Then
 
 ```
-ssh bandit17@localhost -i bandit16.sshkey
+ssh bandit26@localhost -i bandit26.sshkey
 v
-:e /etc/bandit_pass/badnit26
+:e /etc/bandit_pass/bandit26
 ```
 
 got password: 5czgV9L3Xx8JPOyRbXh6lQbmIOWvPT6Z
 
 Note: holy moly, this was tricky but fun
+
+## level 26 -> level 27
+
+**solution**
+
+```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit25
+```
+
+Again, minimize screen. Need to change back the shell
+
+```
+ssh bandit26@localhost -i bandit26.sshkey
+v
+:set shell=/bin/bash
+:shell
+ls
+./bandit27-do
+./bandit27-do cat /etc/bandit_pass/bandit27
+```
+
+got password: 3ba3118a22e93127a4ed485be72ef5ea
+
+## level 27 -> level 28
+
+**solution**
+
+```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit27
+mkdir /tmp/le
+cd /tmp/le
+git clone ssh://bandit27-git@localhost/home/bandit27-git/repo
+```
+
+got password: 0ef186ac70e04ea33b4c1853d2526fa2
