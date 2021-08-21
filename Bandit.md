@@ -494,3 +494,37 @@ git clone ssh://bandit27-git@localhost/home/bandit27-git/repo
 ```
 
 got password: 0ef186ac70e04ea33b4c1853d2526fa2
+
+## level 28 -> level 29
+
+**solution**
+
+```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit28
+mkdir /tmp/le
+git clone ssh://bandit28-git@localhost/home/bandit28-git/repo
+cd repo
+ls
+cat README.md
+git log -p
+```
+
+got password: bbc96594b4e001778eee9975372716b2
+
+## level 29 -> level 30
+
+**solution**
+
+```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit29
+mkdir /tmp/le
+git clone ssh://bandit29-git@localhost/home/bandit29-git/repo
+cd repo
+ls
+cat README.md
+git branch -r
+git checkout dev
+cat README.md
+```
+
+got password: 5b90576bedb2cc04c86a9e924ce42faf
