@@ -528,3 +528,23 @@ cat README.md
 ```
 
 got password: 5b90576bedb2cc04c86a9e924ce42faf
+
+## level 30 -> level 31
+
+**solution**
+
+```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit30
+mkdir /tmp/le
+cd /tmp/le
+git clone ssh://bandit30-git@localhost/home/bandit30-git/repo
+cd repo
+ls -a
+cat README.md
+git log -p
+git branch -r
+git tag
+git show secret
+```
+
+got password: 47e603bb428404d265f59c42920d81e5
