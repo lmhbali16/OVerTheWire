@@ -548,3 +548,45 @@ git show secret
 ```
 
 got password: 47e603bb428404d265f59c42920d81e5
+
+## level 31 -> level 32
+
+**solution**
+
+```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit31
+mkdir /tmp/le
+cd /tmp/le
+git clone ssh://bandit31-git@localhost/home/bandit31-git/repo
+cd repo
+ls -a
+cat README.md
+git log -p
+touch key.txt
+echo "May I come in?" > key.txt
+cat .gitignore
+vim .gitignore //remove the line
+git add -A
+git commit -m"Add key.txt"
+git push
+```
+
+got password: 56a9bf19c63d650ce78e6ec0354ee45e
+
+## level 32 -> level 33
+
+**solution**
+
+```
+ssh bandit.labs.overthewire.org -p 2220 -l bandit32
+$0 // lower case all command
+ls -al
+cat /etc/bandit_pass/bandit33
+```
+
+got password: c9c3199ddf4121b10cf581a98d51caee
+
+
+## level 33 -> level 34
+
+Does not exist yet!
