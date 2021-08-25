@@ -24,7 +24,7 @@ usrname: natas1
 got password: ZluruAthQk7Q2MqmDeTiUij2ZvWy2mBi
 
 
-## level 1 -> level2
+## level 1 -> level 2
 
 link: http://natas2.natas.labs.overthewire.org
 
@@ -40,3 +40,26 @@ username: natas2
 
 
 got password: sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14
+
+## level 2 -> level 3
+
+link: http://natas3.natas.labs.overthewire.org
+
+username: natas3
+
+- go to http://natas3.natas.labs.overthewire.org/robots.txt
+
+[`robots.txt` file info](http://www.robotstxt.org/robotstxt.html)
+
+- go to http://natas3.natas.labs.overthewire.org/s3cr3t/ based on previous link
+
+- select `user.txt`
+
+got password: Z9tkRkWmpt9Qr7XrR5jWRkgOU901swEZ
+
+## level 3 -> level 4
+
+link: http://natas4.natas.labs.overthewire.org
+
+username: natas4
+
